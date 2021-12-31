@@ -50,15 +50,9 @@ of all customer email addresses stored in the database.
 */
 			 -- SOLUTION4
 SELECT
-	customer_id,
-		CASE WHEN 
-		(store_id = 1 OR store_id = 2) THEN email ELSE NULL END AS customers_emails
+		COUNT(email) AS customers_emails
 FROM 
-	customer
-GROUP BY 
-	customer_id
-ORDER BY 
-	customer_id ;
+	customer;
 
 
 
