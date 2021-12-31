@@ -64,9 +64,16 @@ you are to keep customers engaged in the future. Please provide a count of uniqu
 you have in inventory at each store and then provide a count of the unique categories of films you provide. 
 */
 			-- SOLUTION5
-SELECT DISTINCT
-        COUNT(title) AS No_of_film
-FROM film;
+SELECT 
+	store_id,
+        COUNT( DISTINCT film_id) AS unique_films
+FROM inventory
+GROUP BY 
+	store_id;
+    
+SELECT 
+        COUNT( DISTINCT name) AS unique_Categories
+FROM category;
 
 
 
