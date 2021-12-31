@@ -84,17 +84,11 @@ the most expensive to replace, and the average of all films you carry. ``
 */
 			-- SOLUTION6
 SELECT 
-	title,
-    replacement_cost,
-		CASE WHEN replacement_cost <= 15 THEN replacement_cost ELSE '-' END AS least_expensive,
-		CASE WHEN replacement_cost > 15 THEN replacement_cost ELSE '-' END AS most_expensive,
-		AVG(film_id) AS average_film
+	MIN(replacement_cost) AS least_expensive,
+	MAX(replacement_cost) AS least_expensive,
+	AVG(replacement_cost) AS least_expensive
 FROM 
-	film
-GROUP BY 
-	film_id
-ORDER BY 
-	least_expensive DESC, most_expensive DESC ;
+	film;
 
 
 
