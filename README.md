@@ -9,7 +9,7 @@ Am going to leveage on my SQL skills to extract and analyse from various tables 
 
 
 
-#1.	
+# 1.	
   We will need a list of all staff members, including their first and last names, 
 email addresses, and the store identification number where they work. 
 
