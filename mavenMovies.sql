@@ -117,14 +117,11 @@ they have made all-time, with your highest volume customers at the top of the li
 		-- SOLUTION8
 SELECT DISTINCT
 	customer_id,
-	amount,
     COUNT(rental_id) AS rentals_count
 FROM 
 	payment
 GROUP BY 
-	customer_id, 
-	amount
+	customer_id
 ORDER BY  
-    customer_id,
     rentals_count DESC;
 
