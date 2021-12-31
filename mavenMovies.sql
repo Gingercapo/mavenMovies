@@ -5,7 +5,7 @@
 email addresses, and the store identification number where they work. 
 */ 
 
-       -- SOLUTIONS1
+       -- SOLUTION1
 SELECT
 	first_name,
     last_name,
@@ -18,7 +18,7 @@ FROM
 /*
 2.	We will need separate counts of inventory items held at each of your two stores. 
 */ 
-       -- SOLUTIONS2
+       -- SOLUTION2
 SELECT
 	store_id,
 		COUNT(CASE WHEN store_id = 1 OR store_id = 2 THEN inventory_id ELSE NULL END) AS inventory_in_store
@@ -32,7 +32,7 @@ GROUP BY
 /*
 3.	We will need a count of active customers for each of your stores. Separately, please. 
 */
-			 -- SOLUTIONS3
+			 -- SOLUTION3
 SELECT DISTINCT 
 	store_id,
 		COUNT(CASE WHEN (store_id = 1 AND active = 1) OR (store_id = 2 AND active = 1)  THEN 'active' ELSE NULL END) AS active_customers
@@ -48,7 +48,7 @@ GROUP BY
 4.	In order to assess the liability of a data breach, we will need you to provide a count 
 of all customer email addresses stored in the database. 
 */
-			 -- SOLUTIONS4
+			 -- SOLUTION4
 SELECT
 	customer_id,
 		CASE WHEN 
@@ -81,7 +81,7 @@ FROM film;
 Please provide the replacement cost for the film that is least expensive to replace, 
 the most expensive to replace, and the average of all films you carry. ``	
 */
-			-- SOLUTIONS6
+			-- SOLUTION6
 SELECT 
 	title,
     replacement_cost,
@@ -102,7 +102,7 @@ ORDER BY
 processing restrictions in place in order to minimize the future risk of fraud by your staff. 
 Please provide the average payment you process, as well as the maximum payment you have processed.
 */
-		-- SOLUTIONS7
+		-- SOLUTION7
 SELECT  DISTINCT
 	staff_id,
 		AVG(CASE WHEN staff_id = 1 OR staff_id = 2 THEN amount ELSE '-' END) AS average_amount,
@@ -119,7 +119,7 @@ FROM
 Please provide a list of all customer identification values, with a count of rentals 
 they have made all-time, with your highest volume customers at the top of the list.
 */
-		-- SOLUTIONS8
+		-- SOLUTION8
 SELECT DISTINCT
 	customer_id,
 	amount,
